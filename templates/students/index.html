@@ -1,0 +1,10 @@
+{% if not student %}
+    <b> No Students </b>
+{% else %}
+{% for i in student %}
+<a href=" {% url 'student:student-detail' i.id %}">{{i.first_name}}</a> --- {{i.email}} <br>
+{% endfor %}
+{% endif %}
+<br>
+<br>
+<a href="{% url 'student:create-student' %}">Add Student</a>
